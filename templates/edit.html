@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/bootstrap.min.css">
+    <title>Edit Page</title>
+</head>
+
+<body>
+
+    <hr>
+    <div class="container">
+        <h1 class="text-center my-2">Update Your Record</h1>
+        <div class="row">
+            <div class="col-lg-5 col-sm">
+                <br> <br> {% for i in row %}
+                <form action=" " method="POST" class="form-group">
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput" class="form-label"><h1>Student Name</h1></label>
+                        <input type="text" name="name" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder" value="{{i[0]}}">
+
+                        <label for="formGroupExampleInput2" class="form-label"><h1>Course</h1></label>
+                        <input type="text" name="course" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder" value="{{i[1]}}">
+
+                        <label for="formGroupExampleInput2" class="form-label"><h1>Fees</h1></label>
+                        <input type="text" name="fees" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder" value="{{i[2]}}"> <br>
+                        <br>
+                        <input type="submit" name="submit" value="Submit" class="btn btn-outline-dark d-grid gap-2 col-6 mx-auto"> <br>
+                        <!-- <input type="button" value="Submit" class="btn btn-outline-dark d-grid gap-2 col-6 mx-auto"> <br> -->
+                        <!-- <input type="button" value="Submit" class="btn btn-outline-dark d-grid gap-2 col-6 mx-auto"> <br> -->
+                    </div>
+                </form>
+                {% endfor %}
+                <a href="/">
+                    <input type="submit" name="Entry" value="New Entry" class="btn col-lg-12 col-sm btn-success">
+                </a> <br> <br>
+</body>
+
+<script src="../static/bootstrap.min.js"></script>
+
+</html>

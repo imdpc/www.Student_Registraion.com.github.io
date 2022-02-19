@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/bootstrap.min.css">
+    <title>Student Registration Form</title>
+</head>
+
+<body>
+    <h1 class="text-center my-2">Student Registration Form</h1>
+    <hr>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 col-sm">
+                <form action="" method="POST" class="form-group">
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput" class="form-label"><h1>Student Name</h1></label>
+                        <input type="text" name="name" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder">
+
+                        <label for="formGroupExampleInput2" class="form-label"><h1>Course</h1></label>
+                        <input type="text" name="course" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder">
+
+                        <label for="formGroupExampleInput2" class="form-label"><h1>Fees</h1></label>
+                        <input type="text" name="fees" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder"> <br>
+                        <input type="submit" name="submit" value="Submit" class="btn btn-outline-dark d-grid gap-2 col-6 mx-auto"> <br>
+                        <!-- <input type="button" value="Submit" class="btn btn-outline-dark d-grid gap-2 col-6 mx-auto"> <br> -->
+                        <!-- <input type="button" value="Submit" class="btn btn-outline-dark d-grid gap-2 col-6 mx-auto"> <br> -->
+                    </div>
+                </form>
+
+                <a href="display">
+                    <input type="submit" name="show" value="Show Data" class="btn col-lg-12 col-sm btn-danger">
+                </a>
+                <br> <br>
+                <a href="/">
+                    <input type="submit" name="Entry" value="New Entry" class="btn col-lg-12 col-sm btn-success">
+                </a> <br> <br>
+                <p class="alert alert-dark text-center" role="alert">
+                    {% if msg %} {{ msg }} {% endif %}
+                </p>
+            </div>
+
+            <div class="col-lg-2 col-sm"></div>
+            <div class="col-lg-5 col-sm"><br>
+                <!-- <div class="col-lg-5 col-sm">  -->
+                <table class="table table-success table-striped">
+                    <thead class="thead-dark">
+                        <th>Name</th>
+                        <th>Course</th>
+                        <th>Fees</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </thead>
+                    {% for i in row %}
+                    <tr>
+
+                        <td>{{i[0]}}</td>
+                        <td>{{i[1]}}</td>
+                        <td>{{i[2]}}</td>
+                        <td><a href="edit/{{i[0]}}/" target="_blank">Edit</a></td>
+                        <td><a href="delete/{{i[0]}}/" target="_blank">Delete</a></td>
+
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+
+</body>
+
+<script src="../static/bootstrap.min.js"></script>
+
+</html>
